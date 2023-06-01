@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Weather App</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script defer src="js/personal-library.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/gui.js"></script>
+  </head>
+  <body>
+    <div id="top-screen">
+      <h1>Weather Network But Better</h1>
+
+      <form autocomplete="off">
+        <div id="wrapper">
+          <div id="search-bar">
+            <img id="search-icon" src="img/search.png" alt="search" />
+            <input
+              type="text"
+              id="search-container"
+              placeholder="Search city"
+            />
+            <img id="clear-icon" src="img/x.png" alt="clear" />
+            <div id="autocom-box">
+              <!-- list items are inserted from javascript -->
+            </div>
+            <p id="search-err" class="error"></p>
+          </div>
+        </div>
+      </form>
+
+      <div id="menu-options">
+        <p>
+          <span class="fake-link" id="current-link"
+            >&nbsp&nbspCURRENT&nbsp&nbsp</span
+          >
+          <span class="fake-link" id="hourly-link"
+            >&nbsp&nbspHOURLY&nbsp&nbsp</span
+          >
+          <span class="fake-link" id="36-hour-link"
+            >&nbsp&nbsp36 HOUR&nbsp&nbsp</span
+          >
+          <span class="fake-link" id="7-day-link"
+            >&nbsp&nbsp7 DAYS&nbsp&nbsp</span
+          >
+        </p>
+      </div>
+    </div>
+
+    <div id="display-div">
+      <h1>Current Weather in <span id="h1-location">-------</span></h1>
+
+      <div class="weather-display" id="current-div">
+        <img id="weather-img" src="img/question-mark.png" />
+        <span id="temp">---</span>
+        <span id="unit">°C</span>
+        <p>
+          <span>Feels like:</span>
+          <span id="feels-like-temp">0</span>
+          <span id="fl-unit">°C</span>
+        </p>
+        <p><span id="weather-condition">?????</span></p>
+        <p>Humidity: <span id="humidity">?????</span>%</p>
+        <p>
+          Wind: <span id="wind-speed">?????</span
+          ><span id="wind-unit">m/s</span>
+        </p>
+        <p>Wind direction: <span id="wind-direction">?????</span></p>
+        <p id="unit-selection">
+          <span id="celsius">&nbsp°C&nbsp&nbsp</span
+          ><span id="farenheit">&nbsp°F&nbsp&nbsp</span>
+        </p>
+      </div>
+
+      <div class="weather-display" id="hourly-div">
+        <p>hourly(not working)</p>
+      </div>
+
+      <div class="weather-display" id="36-hour-div">
+        <p>36 hour(not working)</p>
+      </div>
+
+      <div class="weather-display" id="7-day-div">
+        <p>7 day(not working)</p>
+      </div>
+    </div>
+  </body>
+</html>
