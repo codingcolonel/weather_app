@@ -10,7 +10,7 @@ let recentCities = initArray('recentCities');
 let currentUnit = 'metric';
 
 // Get city data
-fetch('../data/worldcities.json')
+fetch('./data/worldcities.json')
   .then(function (response) {
     return response.json();
   })
@@ -46,7 +46,6 @@ if (navigator.geolocation) {
 
 function processLocation(position) {
   // Find the city that's closest to provided coordinates
-  console.log(position);
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
       resolve(
@@ -209,7 +208,6 @@ function displaySearchSuggestions(e) {
 
 function selectSearchSuggestion(e) {
   let cityObj;
-  console.log(e);
   if (e.key === 'Enter') {
     // If Enter is pressed, select first suggestion
     cityObj = searchSuggestions[0];
@@ -254,11 +252,9 @@ function selectSearchSuggestion(e) {
   );
   request.send();
   request.onload = () => {
-    console.log(request);
     if (request.status === 200) {
       // If no errors, add API data to array and call Update function
       weather = JSON.parse(request.response);
-      console.log(weather);
       updateHTMLElements(cityObj);
     } else {
       // Output error in console
